@@ -12,7 +12,7 @@ set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin )
 
 SET(OSRE_BUILD_ED OFF CACHE BOOL "no osre ed" )
 
-add_subdirectory(contrib/osre)
+add_subdirectory(osre)
 
 INCLUDE_DIRECTORIES( BEFORE
     ./
