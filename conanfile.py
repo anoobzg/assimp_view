@@ -8,6 +8,9 @@ class PALRecipe(ConanFile):
         self.requires("assimp/5.4.2")
         self.requires("stb/cci.20230920")
         self.requires("sdl/2.30.7")
+        self.requires("glm/1.0.1")
+        self.requires("glew/2.2.0")
+        self.requires("zlib/1.3.1")
 
     def generate(self):
         tc = CMakeToolchain(self)

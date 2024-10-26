@@ -447,5 +447,9 @@ ADD_LIBRARY( osre SHARED
     ${winmanager_src}
 )
 
-target_link_libraries ( osre cppcore zlibstatic Unzip GLEW::GLEW ${platform_libs} assimp )
+target_link_libraries ( osre cppcore ZLIB::ZLIB Unzip GLEW::GLEW ${platform_libs} assimp::assimp )
+
+if(TARGET glm::glm)
+    target_link_libraries ( osre glm::glm )
+endif()
 set_target_properties(  osre PROPERTIES FOLDER Engine )

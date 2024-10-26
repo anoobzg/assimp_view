@@ -4,13 +4,6 @@ INCLUDE_DIRECTORIES( HEADER_PATH
 	../zlib
 )
 
-find_library( 
-	${ZLIB} Zlib
-	PATHS
-	"../zlib"
-	DOC "The Zlib installation path"
-)
-
 SET( unzip_src
 	crypt.h
 	ioapi.c
@@ -25,5 +18,5 @@ else()
     ADD_LIBRARY( Unzip SHARED ${unzip_src} )
 endif()
 
-target_link_libraries ( Unzip zlibstatic ) 
+target_link_libraries ( Unzip ZLIB::ZLIB ) 
 set_target_properties(  Unzip PROPERTIES FOLDER ThirdParty )
